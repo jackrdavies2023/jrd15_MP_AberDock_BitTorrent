@@ -58,7 +58,7 @@ Implemented back-end navigation code to load a different page based on the GET p
 ![Smarty 03](images/feb25_smarty03.png)
 
 ## March 1, 2023 ##
-Implemented the side navigation bar, featuring navigation links and the user profile image and name.
+Implemented the side navigation bar, featuring navigation links and the user profile image and name, as well as a custom "logo" at the top.
 
 ![Navigation bar](images/mar01_navigationbar.png)
 
@@ -69,6 +69,8 @@ The navigation bar is stored in its own template file, called "navbar.tpl". This
 Note the line
 
     {include file='navbar.tpl'}
+
+The logo was created using GIMP. I took a photo from the top of Constitution Hill, Aberystwyth, and drew a simple boat and two letters, "A" and "D, for "Aber Dock".
 
 ## March 2, 2023 ##
 I started working on the browse page, which is the main part of the site that is used for searching and browsing for content.
@@ -100,3 +102,22 @@ The icons are defined using the below CSS:
 ![Icon CSS](images/mar02_iconcss.png)
 
 The "background-color" option is defined by a global variable, which is set based on the users global system theme.
+
+## March 2, 2023 ##
+The initial UI for the search engine has been written. This consists of a search box, followed by check boxes for filtering out search results to give the user accurate results.
+
+![Search engine](images/mar02_searchengine.png)
+
+The search box has been styled to have rounded edges, and the browsers default border/highlight for text boxes has been overwritten with CSS to give it a modern appearance.
+
+![Search engine CSS](images/mar02_searchenginecss.png)
+
+Categories are ordered by parents and children. Parent categories will consist of children categories which relate to the parent. For example, there will be a parent category called "Photos", and the children categories will consist of the types of photo, such as "Aberystwyth", "Artwork", "Pets" and so forth. In the above screenshot, there are placeholders which were used during the development process.
+
+![Search engine category HTML](images/mar02_searchenginecategoryhtml.png)
+
+## March 2, 2023 ##
+I added the template files for the pages "statistics" and "upload". For each page there are two files, the "PHP" files for setting Smarty environment variables and performing any additional checks that will come in the future; and the "TPL" files which are Smarty templates, which will contain the HTML front-end markup that the client will see. These pages can be navigated to using the side navigation menu.
+
+These changes are reflected in [this commit](https://github.com/jackrdavies2023/jrd15_MP_AberDock_BitTorrent_src/commit/53af199136d8b1dc4466ff211bc834973cd17b7d).
+
