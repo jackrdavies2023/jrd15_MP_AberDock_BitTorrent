@@ -56,3 +56,47 @@ Implemented back-end navigation code to load a different page based on the GET p
 ![Smarty 01](images/feb25_smarty01.png)
 ![Smarty 02](images/feb25_smarty02.png)
 ![Smarty 03](images/feb25_smarty03.png)
+
+## March 1, 2023 ##
+Implemented the side navigation bar, featuring navigation links and the user profile image and name.
+
+![Navigation bar](images/mar01_navigationbar.png)
+
+The navigation bar is stored in its own template file, called "navbar.tpl". This file is included by other template files, such as "browse.tpl", "upload.tpl" and "statistics.tpl".
+
+![Navigation bar included in templates](images/mar01_navigationbar_code.png)
+
+Note the line
+
+    {include file='navbar.tpl'}
+
+## March 2, 2023 ##
+I started working on the browse page, which is the main part of the site that is used for searching and browsing for content.
+
+"Cards" were created to list each torrent and to seperate content.
+
+![Torrent "cards"](images/mar02_browsecards.png)
+
+Each card consists of a custom DOM named "card". The "card" element is styled using CSS, and using a custom element rather than a DIV improves code readability.
+
+### HTML ###
+![Torrent card HTML](images/mar02_browsecardhtml.png)
+
+### CSS ###
+![Torrent card CSS](images/mar02_browsecardcss.png)
+
+The background colour of the card is defined by a global variable, which is defined at the beginning of the stylesheet. This variable will differ based on the users browser preferences. If the browser reports that the operating system uses the dark colour scheme, the dark theme will be used. Otherwise the light colour scheme will be defaulted to.
+
+![Dark and light theme CSS variables](images/mar02_darklightthemecss.png)
+
+The icons used in torrent cards, are SVG files obtained from [Google fonts](https://fonts.google.com/icons)
+
+![Using Google fonts to obtain SVG icons](images/mar02_icons.png)
+
+The advantage to using SVG files rather than PNG or JPEG is that they are vector images, meaning that they are typically smaller in size, scale without loss of quality and they can be colourised using CSS, meaning I don't need a new icon for each colour scheme.
+
+The icons are defined using the below CSS:
+
+![Icon CSS](images/mar02_iconcss.png)
+
+The "background-color" option is defined by a global variable, which is set based on the users global system theme.
